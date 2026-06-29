@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>लोकदर्पण - हर गांव, हर जिला, हर खबर</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+        }
+        .header {
+            background: #1a56db;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+        .logo { font-size: 28px; font-weight: bold; }
+        .tagline { font-size: 14px; opacity: 0.9; }
+        .breaking {
+            background: #dc2626;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+        .news-grid {
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .news-content { padding: 15px; }
+        .category {
+            background: #1a56db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+        }
+        .title { font-size: 18px; margin: 8px 0; }
+        .summary { color: #4b5563; font-size: 14px; }
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .tab-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        .tab-item { 
+            text-align: center; 
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .tab-item.active { color: #1a56db; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">📰 लोकदर्पण</div>
+        <div class="tagline">हर गांव, हर जिला, हर खबर</div>
+    </div>
+
+    <!-- Breaking News -->
+    <div class="breaking">
+        🔴 BREAKING: लोकदर्पण की शुरुआत! हर गांव की खबर अब आपकी उंगलियों पर
+    </div>
+
+    <!-- News Grid -->
+    <div class="news-grid">
+        <div class="news-card">
+            <img src="https://picsum.photos/400/200?random=1" alt="News">
+            <div class="news-content">
+                <span class="category">राजनीति</span>
+                <h3 class="title">गांव में नई सरकारी योजना की शुरुआत</h3>
+                <p class="summary">प्रधानमंत्री ने आज गांव में नई योजना का शुभारंभ किया...</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="https://picsum.photos/400/200?random=2" alt="News">
+            <div class="news-content">
+                <span class="category">कृषि</span>
+                <h3 class="title">किसानों को मिलेगा नया बीज</h3>
+                <p class="summary">सरकार ने किसानों के लिए नई बीज योजना की घोषणा की...</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="https://picsum.photos/400/200?random=3" alt="News">
+            <div class="news-content">
+                <span class="category">शिक्षा</span>
+                <h3 class="title">स्कूलों में डिजिटल क्लास शुरू</h3>
+                <p class="summary">गांव के स्कूलों में अब डिजिटल क्लासरूम की सुविधा...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Tab Bar -->
+    <div class="tab-bar">
+        <div class="tab-item active">🏠 Home</div>
+        <div class="tab-item">📰 News</div>
+        <div class="tab-item">🎬 Videos</div>
+        <div class="tab-item">📝 Citizen</div>
+        <div class="tab-item">👤 Profile</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" style="margin-bottom: 60px;">
+        <p>© 2024 लोकदर्पण - हर गांव, हर जिला, हर खबर</p>
+        <p style="font-size: 12px; opacity: 0.7;">Made with ❤️ for Rural India</p>
+    </div>
+
+    <script>
+        // Simple JavaScript
+        console.log('लोकदर्पण - Hyperlocal News Platform');
+        
+        // Tab Switching
+        document.querySelectorAll('.tab-item').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
